@@ -13,6 +13,8 @@
                 path: config/git
         ~/.config/i3:
                 path: config/i3
+        ~/.config/nvim:
+                path: config/nvim
         ~/.config/termite:
                 path: config/termite
         ~/.config/zsh:
