@@ -17,5 +17,7 @@
                 path: config/nvim
         ~/.config/termite:
                 path: config/termite
+        ~/.config/X11:
+                path: config/X11
         ~/.config/zsh:
                 path: config/zsh
