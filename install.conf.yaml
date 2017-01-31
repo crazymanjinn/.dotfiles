@@ -11,6 +11,8 @@
         ~/.zshenv:
         ~/.config/git:
                 path: config/git
+        ~/.config/i3:
+                path: config/i3
         ~/.config/termite:
                 path: config/termite
         ~/.config/zsh:
