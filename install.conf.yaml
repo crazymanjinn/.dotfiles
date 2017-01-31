@@ -1,0 +1,17 @@
+- defaults:
+        link:
+                relink: true
+                create: true
+                relative: true
+
+- link:
+        ~/.pam_environment:
+        ~/.xinitrc:
+        ~/.xserverrc:
+        ~/.zshenv:
+        ~/.config/git:
+                path: config/git
+        ~/.config/termite:
+                path: config/termite
+        ~/.config/zsh:
+                path: config/zsh
