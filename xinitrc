@@ -8,7 +8,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-	systemd-cat -t xinitrc echo merging system xresources
 	xrdb -merge $sysresources
 fi
 
@@ -17,7 +16,6 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-	systemd-cat -t xinitrc echo merging user xresources
 	xrdb -merge "$userresources"
 
 fi
