@@ -9,6 +9,8 @@
         ~/.xinitrc:
         ~/.xserverrc:
         ~/.zshenv:
+        ~/.config/dunst:
+                path: config/dunst
         ~/.config/git:
                 path: config/git
         ~/.config/i3:
@@ -21,3 +23,4 @@
                 path: config/X11
         ~/.config/zsh:
                 path: config/zsh
+        ~/bin:

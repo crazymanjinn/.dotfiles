@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+get_volume() {
+	text="$(amixer get Master | tail -n1 | cut -d' ' -f6 | tr -d '[]')"
+}
+
+if [[ "$1" == "mute" ]]; then
+	amixer -q set Master toggle
+	if [[ "$(amixer get Master | tail -n1 | cut -d' ' -f8)" == "[on]" ]]; then
+		get_volume
+		icon=""
+	else
+		text="mute"
+		icon=""
+	fi
+else
+	amixer -q set Master "$1" unmute 
+	get_volume
+	if [[ "$1" == *+ ]]; then
+		icon=""
+	elif [[ "$1" == *- ]]; then
+		icon=""
+	fi
+fi
+
+pidfile="$XDG_RUNTIME_DIR/i3/volume"
+if [[ -e "$pidfile" ]]; then
+	dunstify -p -r "$(cat "$pidfile")" "$icon Volume: $text" > "$pidfile"
+else
+	[[ -d "$XDG_RUNTIME_DIR/i3" ]] || mkdir -p "$XDG_RUNTIME_DIR/i3"
+	dunstify -p "$icon Volume: $text" > "$pidfile"
+fi

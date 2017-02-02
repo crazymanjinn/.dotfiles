@@ -1,5 +1,5 @@
 typeset -U path
-#path=$("$HOME"/.local/bin $PATH)
+path=("$HOME"/bin $path[@])
 systemctl --user import-environment PATH
 
 if [[ -z "$DISPLAY" ]] && [[ -n "$XDG_VTNR" ]] && [[ "$XDG_VTNR" -eq 1 ]]; then
