@@ -11,6 +11,8 @@
         ~/.zshenv:
         ~/.config/dunst:
                 path: config/dunst
+        ~/.config/compton:
+                path: config/compton
         ~/.config/git:
                 path: config/git
         ~/.config/i3:
