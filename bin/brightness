@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+if [[ "$1" == "-A" ]]; then
+	icon=""
+elif [[ "$1" == "-U" ]]; then
+	icon=""
+fi
+light $@
+text="$(light -G | awk '{printf "%.0f", $1}')"
+
+
+pidfile="$XDG_RUNTIME_DIR/i3/brightness"
+if [[ -e "$pidfile" ]]; then
+	dunstify -p -t 3 -r "$(cat "$pidfile")" "$icon brightness: $text" > "$pidfile" 
+else
+	dunstify -p -t 3 "$icon brightness: $test" > "$pidfile"
+fi

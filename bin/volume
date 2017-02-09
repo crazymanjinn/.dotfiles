@@ -24,8 +24,8 @@ fi
 
 pidfile="$XDG_RUNTIME_DIR/i3/volume"
 if [[ -e "$pidfile" ]]; then
-	dunstify -p -r "$(cat "$pidfile")" "$icon Volume: $text" > "$pidfile"
+	dunstify -p -t 3 -r "$(cat "$pidfile")" "$icon volume: $text" > "$pidfile"
 else
 	[[ -d "$XDG_RUNTIME_DIR/i3" ]] || mkdir -p "$XDG_RUNTIME_DIR/i3"
-	dunstify -p "$icon Volume: $text" > "$pidfile"
+	dunstify -p -t 3 "$icon Volume: $text" > "$pidfile"
 fi
